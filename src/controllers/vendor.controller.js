@@ -306,7 +306,7 @@ const getCurrentVendor= asyncHandler( async (req,res)=>{
  //====================================================================================================================
 
  const updateVendorAccountDetails= asyncHandler(async (req,res)=>{
-    const {phone,aadhaar}=req.body
+    const {phone,aadhaar,registrationNo}=req.body
  
     console.log("vendorIS:::::",req.vendor?._id)
     const user= await Vendor.findByIdAndUpdate(
@@ -315,6 +315,7 @@ const getCurrentVendor= asyncHandler( async (req,res)=>{
           $set:{
              aadhaar,
              phone,
+             registrationNo,
           }
        },
        {new:true}

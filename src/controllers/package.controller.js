@@ -44,9 +44,9 @@ const addPackage= asyncHandler(async (req,res)=>{
     }
     const avatarLocalPath= req.files?.avatar[0]?.path 
     console.log(avatarLocalPath)
-    if(!avatarLocalPath){
-       throw new ApiError(400,"Avatar file path  is compulsory");
-    }
+    // if(!avatarLocalPath){
+    //    throw new ApiError(400,"Avatar file path  is compulsory");
+    // }
 
     const avatarcopy =await uploadOnCloudinary(avatarLocalPath) 
     // if(!avatarcopy){
